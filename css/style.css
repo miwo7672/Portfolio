@@ -15,3 +15,14 @@ a {
 table {
   text-align: center;
 }
+
+.illust {
+  background-image: url("../images/illust_background.png");
+}
+
+/* 하단부 콘텐츠 */
+footer {
+  width: 100%;
+  background-color: gray;
+  text-align: center;
+}
