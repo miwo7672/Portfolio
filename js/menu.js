@@ -2,11 +2,11 @@ const row = document.querySelector(".menu-row");
 const illustImage = document.querySelector("#illustImage");
 
 const frames = [
-    "../images/398.1.png",
-    "../images/398.2.png",
-    "../images/398.3.png",
-    "../images/398.4.png",
-    "../images/398.5.png",
+    "../images/illust_1.png",
+    "../images/illust_2.png",
+    "../images/illust_3.png",
+    "../images/illust_4.png",
+    "../images/illust_5.png",
 ];
 
 const originalImage = "images/illust_logo.png"
