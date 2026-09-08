@@ -7,6 +7,7 @@ const frames = [
     "images/illust_3.png",
     "images/illust_4.png",
     "images/illust_5.png",
+    "images/illust_6.png"
 ];
 
 const originalImage = "images/illust_logo.png"
