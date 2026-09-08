@@ -1,5 +1,5 @@
 const row = document.querySelector(".menu-row");
-const image = document.querySelector(".illust img");
+const illustImage = document.querySelector("#illustImage");
 
 const frames = [
     "../images/398.1.png",
@@ -9,10 +9,9 @@ const frames = [
     "../images/398.5.png",
 ];
 
-let timer;
+const originalImage = "images/illust_logo.png"
 
-row.querySelector(".cartoon").addEventListener("mouseenter", playAnimation);
-row.querySelector(".etc").addEventListener("mouseenter", playAnimation);
+let timer;
 
 function playAnimation() {
     clearInterval(timer);
@@ -20,7 +19,7 @@ function playAnimation() {
     let frame = 0;
 
     timer = setInterval(() => {
-        image.src = frames[frame];
+        illustImage.src = frames[frame];
 
         frame++;
 
@@ -29,3 +28,18 @@ function playAnimation() {
         }
     }, 100);
 }
+
+function resetAnimation() {
+    clearInterval(timer);
+
+    illustImage.src = originalImage;
+}
+
+const cartoon = document.querySelector(".cartoon");
+const etc = document.querySelector(".etc");
+
+cartoon.addEventListener("mouseenter", playAnimation);
+cartoon.addEventListener("mouseleave", resetAnimation);
+
+etc.addEventListener("mouseenter", playAnimation);
+etc.addEventListener("mouseleave", resetAnimation);

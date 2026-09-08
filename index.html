@@ -8,10 +8,10 @@
     <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/script.js"></script>
+    <script language="javascript" src="js/menu.js" defer></script>
 </head>
 
 <body>
-    <script language="javascript" src="js/menu.js" defer></script>
     <table border="0" align="center" width="99%">
         <tr>
             <th colspan="3">
@@ -19,10 +19,14 @@
             </th>
         </tr>
         <tr class="menu-row">
-            <td class="area cartoon" width="33%">칸1</td>
-            <td class="area illust" width="33%"><img src="images/illust_logo.png" width="100%">
+            <td class="area cartoon" id="Image" width="33%">
+                <img id="cartoonImage" src="images/cartoon_logo.png" width="100%">
             </td>
-            <td class="area etc" width="33%">칸3</td>
+            <td class="area illust" width="33%"><img id="illustImage" src="images/illust_logo.png" width="100%">
+            </td>
+            <td class="area etc" width="33%">
+                <img id="etcImage" src="images/etc_logo.png" width="100%">
+            </td>
         </tr>
     </table>
     <footer>
