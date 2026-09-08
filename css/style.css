@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/* 전체 디폴트 설정 값 조정 */
+* {
+  margin: 0 auto;
+  padding: 0;
+  color: black;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
