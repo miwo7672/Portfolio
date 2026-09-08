@@ -1,46 +1,112 @@
-const row = document.querySelector(".menu-row");
-const illustImage = document.querySelector("#illustImage");
+const areas = {
+    cartoon: {
+        area: document.querySelector(".cartoon"),
+        image: document.querySelector("#cartoonImage"),
+        original: "images/cartoon_logo.png",
 
-const frames = [
-    "images/illust_1.png",
-    "images/illust_2.png",
-    "images/illust_3.png",
-    "images/illust_4.png",
-    "images/illust_5.png",
-    "images/illust_6.png"
-];
+        frames: [
+            "images/cartoon_1.png",
+            "images/cartoon_2.png",
+            "images/cartoon_3.png",
+            "images/cartoon_4.png",
+            "images/cartoon_5.png",
+            "images/cartoon_6.png"
+        ]
+    },
 
-const originalImage = "images/illust_logo.png"
+    illust: {
+        area: document.querySelector(".illust"),
+        image: document.querySelector("#illustImage"),
+        original: "images/illust_logo.png",
 
-let timer;
+        frames: [
+            "images/illust_1.png",
+            "images/illust_2.png",
+            "images/illust_3.png",
+            "images/illust_4.png",
+            "images/illust_5.png",
+            "images/illust_6.png"
+        ]
+    },
 
-function playAnimation() {
-    clearInterval(timer);
+    etc: {
+        area: document.querySelector(".etc"),
+        image: document.querySelector("#etcImage"),
+        original: "images/etc_logo.png",
+
+        frames: [
+            "images/etc_1.png",
+            "images/etc_2.png",
+            "images/etc_3.png",
+            "images/etc_4.png",
+            "images/etc_5.png",
+            "images/etc_6.png"
+        ]
+    }
+};
+
+
+// 각 영역의 타이머
+const timers = {};
+
+
+// 애니메이션 실행
+function playAnimation(target) {
+
+    clearInterval(timers[target]);
+
+    const current = areas[target];
 
     let frame = 0;
 
-    timer = setInterval(() => {
-        illustImage.src = frames[frame];
+    timers[target] = setInterval(() => {
+
+        current.image.src = current.frames[frame];
 
         frame++;
 
-        if (frame >= frames.length) {
-            clearInterval(timer);
+        if (frame >= current.frames.length) {
+            clearInterval(timers[target]);
         }
+
     }, 100);
 }
 
-function resetAnimation() {
-    clearInterval(timer);
 
-    illustImage.src = originalImage;
+// 원본 이미지로 복귀
+function resetAnimation(target) {
+
+    clearInterval(timers[target]);
+
+    areas[target].image.src = areas[target].original;
 }
 
-const cartoon = document.querySelector(".cartoon");
-const etc = document.querySelector(".etc");
 
-cartoon.addEventListener("mouseenter", playAnimation);
-cartoon.addEventListener("mouseleave", resetAnimation);
+// 각 영역에 이벤트 등록
+Object.keys(areas).forEach((hoverTarget) => {
 
-etc.addEventListener("mouseenter", playAnimation);
-etc.addEventListener("mouseleave", resetAnimation);
+    areas[hoverTarget].area.addEventListener("mouseenter", () => {
+
+        // 모든 영역 확인
+        Object.keys(areas).forEach((target) => {
+
+            // 현재 hover한 영역은 제외
+            if (target !== hoverTarget) {
+                playAnimation(target);
+            }
+
+        });
+
+    });
+
+
+    areas[hoverTarget].area.addEventListener("mouseleave", () => {
+
+        // 모든 영역 원상복구
+        Object.keys(areas).forEach((target) => {
+            resetAnimation(target);
+        });
+
+    });
+
+});

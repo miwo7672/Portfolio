@@ -19,6 +19,9 @@ table {
 .illust {
   background-image: url("../images/illust_background.png");
 }
+.cartoon {
+  background-image: url("../images/cartoon_background.png");
+}
 
 /* 하단부 콘텐츠 */
 footer {
