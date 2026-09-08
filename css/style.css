@@ -22,6 +22,9 @@ table {
 .cartoon {
   background-image: url("../images/cartoon_background.png");
 }
+.etc {
+  background-image: url("../images/etc_background.png");
+}
 
 /* 하단부 콘텐츠 */
 footer {
