@@ -26,6 +26,18 @@ table {
   background-image: url("../images/etc_background.png");
 }
 
+.submenu-cartoon {
+  border: 3px solid black;
+  color: black;
+  background-color: white;
+  background-image: url("../images/cartoon_background.png");
+}
+.submenu-cartoon:hover {
+  color: white;
+  background-image: none;
+  background-color: gray;
+}
+
 /* 하단부 콘텐츠 */
 footer {
   width: 100%;
