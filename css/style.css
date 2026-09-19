@@ -37,6 +37,17 @@ table {
   background-image: none;
   background-color: gray;
 }
+.submenu-illust {
+  border: 3px solid black;
+  color: black;
+  background-color: white;
+  background-image: url("../images/illust_background.png");
+}
+.submenu-illust:hover {
+  color: white;
+  background-image: none;
+  background-color: gray;
+}
 
 /* 하단부 콘텐츠 */
 footer {

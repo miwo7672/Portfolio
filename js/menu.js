@@ -69,7 +69,7 @@ function playAnimation(target) {
             clearInterval(timers[target]);
         }
 
-    }, 100);
+    }, 75);
 }
 
 
