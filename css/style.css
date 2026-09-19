@@ -55,3 +55,90 @@ footer {
   background-color: gray;
   text-align: center;
 }
+
+/* 이미지 슬라이드 전체 영역 */
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto;
+  overflow: hidden;
+}
+
+/* 이미지가 가로로 나열되는 영역 */
+.slide-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* 개별 슬라이드 */
+.slide {
+  flex: 0 0 100%;
+}
+
+/* 이미지 */
+.slide img {
+  display: block;
+  width: 40%;
+  height: auto;
+}
+
+/* 이전 / 다음 버튼 */
+.slide-prev,
+.slide-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 45px;
+  height: 70px;
+
+  border: none;
+  background-color: rgba(0, 0, 0, 0.35);
+  color: white;
+
+  font-size: 40px;
+  cursor: pointer;
+
+  z-index: 10;
+}
+
+.slide-prev {
+  left: 10px;
+}
+
+.slide-next {
+  right: 10px;
+}
+
+.slide-prev:hover,
+.slide-next:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* 하단 점 */
+.slide-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 8px;
+}
+
+.slide-dot {
+  width: 10px;
+  height: 10px;
+
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.slide-dot.active {
+  background-color: white;
+}
