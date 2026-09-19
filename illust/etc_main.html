@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <title>Illust - Miwo`s PortFolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/script.js"></script>
+</head>
+
+<body>
+    <table border="0" align="center" width="99%">
+        <tr>
+            <th colspan="3">
+                <a href="../index.html"><img src="../images/logo.png" width="30%"></a>
+            </th>
+        </tr>
+        <tr>
+            <th width="50%" class="submenu-illust">
+                <a href="illust_main.html">イラスト</a>
+            </th>
+            <th width="50%" class="submenu-illust">
+                <a href="etc_main.html">etc.</a>
+            </th>
+        </tr>
+
+        <script language="javascript">
+            for (let i = 1; i <= 57; i += 2) {
+
+                document.write(
+                    "<tr>" +
+
+                    "<td>" +
+                    "<br>" +
+                    "<a href='etc.html?id=" + i + "'>" +
+                    "<img src='../images/illust_etc_" + i + ".jpg' width='40%'><br>" +
+                    "<strong>らくがき" + i + "</strong>" +
+                    "</a>" +
+                    "<br><br>" +
+                    "</td>" +
+
+                    (i + 1 <= 57 ?
+
+                        "<td>" +
+                        "<br>" +
+                        "<a href='etc.html?id=" + (i + 1) + "'>" +
+                        "<img src='../images/illust_etc_" + (i + 1) + ".jpg' width='40%'><br>" +
+                        "<strong>らくがき" + (i + 1) + "</strong>" +
+                        "</a>" +
+                        "<br><br>" +
+                        "</td>"
+
+                        : "") +
+
+                    "</tr>"
+                );
+            }
+        </script>
+    </table>
+    <footer>
+        Copyright 2026. Kirima all rights reserved.<br>Contact: miwo7672@gmail.com<br>Website Administrator:
+        wnstn4896@naver.com
+    </footer>
+</body>
+
+</html>

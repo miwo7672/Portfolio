@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <title>etc. - Miwo`s PortFolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/script.js"></script>
+</head>
+
+<body>
+
+    <table border="0" align="center" width="99%">
+        <tr>
+            <th colspan="3">
+                <a href="../index.html">
+                    <img src="../images/logo.png" width="30%">
+                </a>
+            </th>
+        </tr>
+
+        <tr>
+            <th width="50%" class="submenu-illust">
+                <a href="illust_main.html">イラスト</a>
+            </th>
+
+            <th width="50%" class="submenu-illust">
+                <a href="etc_main.html">etc.</a>
+            </th>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+
+                <h1 id="title"></h1>
+                <h2 id="date"></h2>
+
+                <hr>
+                <br>
+
+                <img id="mainImage" width="60%">
+
+                <br><br>
+
+                <a href="etc_main.html">← 목록으로 돌아가기</a>
+
+            </td>
+        </tr>
+    </table>
+
+    <footer>
+        Copyright 2026. Kirima all rights reserved.<br>
+        Contact: miwo7672@gmail.com<br>
+        Website Administrator: wnstn4896@naver.com
+    </footer>
+
+    <script>
+        // URL에서 ?id=1 부분을 가져옴
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
+
+        // 번호가 없으면 1번으로 처리
+        const number = id || 1;
+
+        // 제목
+        document.getElementById("title").textContent =
+            "らくがき" + number;
+
+        // 이미지
+        document.getElementById("mainImage").src =
+            "../images/illust_etc_" + number + ".jpg";
+
+        // 필요하다면 날짜도 여기서 설정 가능
+        document.getElementById("date").textContent =
+            "";
+
+        // 브라우저 탭 제목
+        document.title =
+            "らくがき" + number + " - Miwo`s PortFolio";
+    </script>
+
+</body>
+
+</html>
