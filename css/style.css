@@ -63,6 +63,7 @@ footer {
   max-width: 1200px;
   margin: 30px auto;
   overflow: hidden;
+  background-image: url("../images/etc_background.png");
 }
 
 /* 이미지가 가로로 나열되는 영역 */
